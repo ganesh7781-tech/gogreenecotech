@@ -1525,7 +1525,6 @@ input, textarea, select {
 
 @media (min-width: 768px) {
   .service-grid {
-    grid-template-columns: 1:1; /* Grid template helper */
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-20);
   }
