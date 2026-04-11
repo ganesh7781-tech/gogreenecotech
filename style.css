@@ -1504,6 +1504,45 @@ input, textarea, select {
   color: var(--green-400);
 }
 
+/* Service Grid Utility */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+.service-grid-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1:1; /* Grid template helper */
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-20);
+  }
+  
+  .service-grid-img {
+    height: 400px;
+    aspect-ratio: auto;
+  }
+
+  .service-grid.reverse > div:first-child {
+    order: 2;
+  }
+  .service-grid.reverse > div:last-child {
+    order: 1;
+  }
+}
+
 
 /* ========================================================
    ANIMATIONS
