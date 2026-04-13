@@ -217,7 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   function revealOnScroll() {
-    fadeElements.forEach(el => {
+    fadeElements.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .img-reveal').forEach(el => {
       revealObserver.observe(el);
     });
   }
@@ -390,6 +391,66 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => widget.style.opacity = '1', 500);
     }
   }
+
+  // ═══════════════════════════════════════════════════════
+  // HERO SLIDESHOW LOGIC
+  // ═══════════════════════════════════════════════════════
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let currentSlide = 0;
+  const slideInterval = 2000; // 2 seconds
+
+  function nextSlide() {
+    // Current slide becomes 'fade-exit'
+    slides[currentSlide].classList.remove('active');
+    slides[currentSlide].classList.add('fade-exit');
+    dots[currentSlide].classList.remove('active');
+
+    const previousSlide = currentSlide;
+
+    // Move to next
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    // New slide becomes 'active'
+    slides[currentSlide].classList.add('active');
+    slides[currentSlide].classList.remove('fade-exit');
+    dots[currentSlide].classList.add('active');
+
+    // Clean up previous slide class after transition
+    setTimeout(() => {
+        slides[previousSlide].classList.remove('fade-exit');
+    }, 1800); // Match CSS transition duration
+  }
+
+  // Handle dot clicks
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        if (index === currentSlide) return;
+
+        // Reset previous
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('fade-exit');
+        dots[currentSlide].classList.remove('active');
+
+        const prev = currentSlide;
+        currentSlide = index;
+
+        // Set current
+        slides[currentSlide].classList.add('active');
+        slides[currentSlide].classList.remove('fade-exit');
+        dots[currentSlide].classList.add('active');
+
+        setTimeout(() => {
+            slides[prev].classList.remove('fade-exit');
+        }, 1800);
+
+        // Reset interval
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, slideInterval);
+    });
+  });
+
+  let autoSlide = setInterval(nextSlide, slideInterval);
 
   // ═══════════════════════════════════════════════════════
   // INITIAL CALLS
