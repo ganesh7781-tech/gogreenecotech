@@ -428,11 +428,14 @@ ul {
     transform: translateY(-10px);
 }
 
+.service-img {
+    background-color: #f8f9fa;
+}
 .service-img img {
     width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .service-info {
@@ -1040,10 +1043,13 @@ textarea.form-control {
 .bg-dark .bakebun-title-group p {
     color: rgba(255,255,255,0.5) !important;
 }
+.bakebun-img {
+    background-color: #f1f1f1; /* Light neutral background for mismatched aspect ratios */
+}
 .bakebun-img img {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
+    aspect-ratio: 16 / 11;
+    object-fit: contain;
     display: block;
 }
 .bakebun-body {
@@ -1076,4 +1082,118 @@ textarea.form-control {
 }
 .bakebun-btn:hover {
     background-color: var(--dark-green);
+}
+/* Clients Marquee Section */
+.clients-section {
+    padding: 80px 0;
+    overflow: hidden;
+    background-color: var(--bg-light);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.clients-section .section-title {
+    margin-bottom: 50px;
+}
+
+.marquee-container {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Gradient Mask for Fade Effect at edges */
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-light), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-light), transparent);
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 30px;
+    animation: scroll-left 40s linear infinite;
+}
+
+.marquee-content.reverse {
+    animation: scroll-left 50s linear infinite; /* Slightly slower for a parallax effect */
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.logo-card {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    height: 100px;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo-card span {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .clients-section { padding: 50px 0; }
+    .logo-card {
+        min-width: 160px;
+        height: 70px;
+        padding: 10px 15px;
+    }
+    .logo-card span { font-size: 11px; }
+    .marquee-content { gap: 15px; }
+    .marquee-container { gap: 15px; }
+}
+
+.rounded-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #f1f1f1;
+    border-radius: 12px;
 }
