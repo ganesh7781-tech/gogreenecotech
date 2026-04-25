@@ -1214,6 +1214,11 @@ textarea.form-control {
     border-top: 1px solid rgba(0,0,0,0.05);
 }
 
+.clients-section.bg-dark {
+    background-color: var(--dark-green) !important;
+    border: none;
+}
+
 .clients-section .section-title {
     margin-bottom: 50px;
 }
@@ -1242,10 +1247,16 @@ textarea.form-control {
     left: 0;
     background: linear-gradient(to right, var(--bg-light), transparent);
 }
+.bg-dark .marquee-container::before {
+    background: linear-gradient(to right, var(--dark-green), transparent);
+}
 
 .marquee-container::after {
     right: 0;
     background: linear-gradient(to left, var(--bg-light), transparent);
+}
+.bg-dark .marquee-container::after {
+    background: linear-gradient(to left, var(--dark-green), transparent);
 }
 
 .marquee-content {
