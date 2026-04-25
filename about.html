@@ -25,7 +25,7 @@
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="index.html" class="logo">
-                <img src="images/go-green-1 logo new.png" alt="Go Green Eco Tech Logo">
+                <img src="images/go-green-1 logo new.png" alt="Go Green Eco Tech Logo" class="header-logo-img">
             </a>
             <div class="header-right d-flex align-items-center" style="gap: 20px;">
                 <div class="mobile-toggle" id="mobile-toggle">
@@ -61,8 +61,13 @@
 
     <section class="about section-padding">
         <div class="container d-flex align-items-center gap-4 flex-wrap">
-            <div class="about-image flex-1 position-relative">
-                <img src="images/factory/PHOTOS OF FACTORY-1.jpeg" alt="Go Green Eco Tech Factory" class="rounded-image shadow-main">
+            <div class="about-image position-relative about-image-small">
+                <div class="about-gallery">
+                    <img src="images/factory/PHOTOS OF FACTORY-1.jpeg" alt="Factory View 1">
+                    <img src="images/factory/PHOTOS OF FACTORY-2.jpeg" alt="Factory View 2">
+                    <img src="images/factory/PHOTOS OF FACTORY-3.jpeg" alt="Factory View 3">
+                    <img src="images/factory/PHOTOS OF FACTORY-4.jpeg" alt="Factory View 4">
+                </div>
                 <div class="expert-badge">
                     <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
                     <div class="badge-text" style="text-align: left;">
@@ -71,37 +76,30 @@
                     </div>
                 </div>
             </div>
-            <div class="about-content flex-1">
-                <span class="section-subtitle">Our Story</span>
-                <h2 class="section-title">Cleaning Up India's Factories</h2>
-                <p class="section-desc">At Go Green Eco Tech, we believe industrial waste should not be a problem for the planet or your business. For 15 years, we have helped factories across India handle waste easily and stay within the law.</p>
+            <div class="about-content">
+                <span class="section-subtitle">About Go Green</span>
+                <h2 class="section-title">We're Cleaning Up Industry</h2>
+                <p class="section-desc">Go Green Eco Tech is more than just a waste company. We are a team of environmentalists with 15 years of practical experience helping Indian industries manage their hazardous and non hazardous byproducts responsibly and legally.</p>
 
                 <h4 style="margin-bottom: 8px; margin-top: 24px; color: var(--text-dark);">🎯 Our Mission</h4>
-                <p style="margin-bottom: 20px;">We provide simple, legal, and low-cost waste solutions. We keep your factory running while keeping the environment safe.</p>
+                <p style="margin-bottom: 20px;">To provide practical, ethical, and affordable waste management that keeps your facility safe and your business in total compliance with CPCB regulations.</p>
 
                 <h4 style="margin-bottom: 8px; color: var(--text-dark);">🌱 Our Vision</h4>
-                <p style="margin-bottom: 24px;">A "zero waste" future for India where every byproduct is reused to create a cleaner world for the next generation.</p>
+                <p style="margin-bottom: 24px;">To build a circular economy where "waste" is no longer a problem, but a resource that fuels the next generation of Indian manufacturing.</p>
 
                 <ul class="about-list">
                     <li>
                         <i class="fa-solid fa-earth-americas"></i>
                         <div>
                             <strong>Real Impact</strong>
-                            <p style="margin:4px 0 0 0; font-size:0.95rem;">We focus on keeping local soil and water clean, not just moving waste away.</p>
+                            <p style="margin:4px 0 0 0; font-size:0.95rem;">We don't just move trash - we process it using methods that actually protect our local ecosystems.</p>
                         </div>
                     </li>
                     <li>
                         <i class="fa-solid fa-scale-balanced"></i>
                         <div>
-                            <strong>Legal Support</strong>
-                            <p style="margin:4px 0 0 0; font-size:0.95rem;">We handle all government paperwork and certificates (ISO, CPCB) for you.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-user-tie"></i>
-                        <div>
-                            <strong>Expert Team</strong>
-                            <p style="margin:4px 0 0 0; font-size:0.95rem;">15 years of experience solving waste problems on factory floors.</p>
+                            <strong>Legal Security</strong>
+                            <p style="margin:4px 0 0 0; font-size:0.95rem;">Sleep better knowing your waste is handled by ISO 14001 and CPCB certified experts.</p>
                         </div>
                     </li>
                 </ul>
@@ -185,7 +183,7 @@
         <div class="container footer-grid">
             <div class="footer-col branding">
                 <a href="index.html" class="logo footer-logo">
-                    <img src="images/go-green-1 logo new.png" alt="Go Green Eco Tech Logo" style="height: 60px;">
+                    <img src="images/go-green-1 logo new.png" alt="Go Green Eco Tech Logo" style="height: 80px;">
                 </a>
                 <p>Transforming industrial waste into sustainable resources for a cleaner, greener future.</p>
                 <div class="footer-socials mt-3">
@@ -217,10 +215,22 @@
             </div>
             <div class="footer-col contact-info">
                 <h3>Contact</h3>
-                <p style="margin-bottom: 10px;"><i class="fa-solid fa-building"></i> <strong>Corp Office:</strong> Thane(W)-400 604</p>
-                <p style="margin-bottom: 10px;"><i class="fa-solid fa-industry"></i> <strong>Factory:</strong> Plot No-6, 7. 70 Bungla, Near Karam Tara, Saravali, Boisar 401506. Tel & Dist-Palghar. Maharashtra.</p>
-                <p><i class="fa-solid fa-envelope"></i> info@gogreenecotech.in</p>
-                <p><i class="fa-solid fa-phone"></i> +91 9112220077</p>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-building"></i>
+                    <span><strong>Corp Office:</strong> Thane(W)-400 604</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-industry"></i>
+                    <span><strong>Factory:</strong> Plot No-6, 7. 70 Bungla, Near Karam Tara, Saravali, Boisar 401506. Tel & Dist-Palghar. Maharashtra.</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@gogreenecotech.in</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 9112220077</span>
+                </div>
             </div>
         </div>
         <div class="footer-bottom border-top">

@@ -39,4 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Close menu when a link is clicked
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-xmark');
+                }
+            }
+        });
+    });
 });
